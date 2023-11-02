@@ -17,8 +17,8 @@ jobs:
           validateSingleCommit: true
 
   check_all_commit_messages:
-    runs-on: ubuntu-latest
     name: Conventional Commits Message
+    runs-on: ubuntu-latest
     steps:
       - uses: gsactions/commit-message-checker@v2
         with:
