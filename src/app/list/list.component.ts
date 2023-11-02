@@ -3,12 +3,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-  items: string[] = ['Item 1', 'Item 2', 'Item 3'];
+  items: any[] = [];
 
-  addItem(newItem: string): void {
-    this.items.push(newItem);
+  addTask(item:string)
+  {
+    this.items.push({id:this.items.length,name:item})
+    console.warn(this.items);
+
+  }
+  removeTask(id:number)
+  {
+    console.warn(id)
+    this.items=this.items.filter(item=>item.id!==id);
   }
 }
