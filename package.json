@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "format": "prettier --write .",
-    "format:check": "prettier . --ignore-path .gitignore --check",
+    "format:check": "prettier --check .",
     "format:fix": "prettier . --ignore-path .gitignore --write"
   },
   "private": true,
