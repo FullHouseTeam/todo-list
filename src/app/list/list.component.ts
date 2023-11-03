@@ -11,7 +11,6 @@ export class ListComponent {
 
   addTask(item: string) {
     this.items.push({ id: this.items.length, name: item });
-    console.warn(this.items);
   }
   removeTask(id: number) {
     this.items = this.items.filter((item) => item.id !== id);
