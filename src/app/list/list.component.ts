@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoItem } from '../interfaces/todo-item';
 
 @Component({
   selector: 'app-list',
@@ -6,9 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-  items: string[] = ['Item 1', 'Item 2', 'Item 3'];
+  items: TodoItem[] = [];
 
-  addItem(newItem: string): void {
-    this.items.push(newItem);
+  addTask(item: string) {
+    this.items.push({ id: this.items.length, name: item });
+    console.warn(this.items);
+  }
+  removeTask(id: number) {
+    this.items = this.items.filter((item) => item.id !== id);
   }
 }
