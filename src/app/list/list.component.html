@@ -1,3 +1,5 @@
-<ul>
-  <li *ngFor="let item of items">{{ item }}</li>
+<input type="text" placeholder="Enter New Task" #task />
+<button (click)="addTask(task.value)">Add New Task</button>
+<ul *ngFor="let item of items">
+  <li>{{item.name}} <button (click)="removeTask(item.id)">Remove</button></li>
 </ul>
